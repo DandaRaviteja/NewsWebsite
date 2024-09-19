@@ -1,0 +1,121 @@
+OVerall website consists of below componenets
+
+1. Nav bar section
+2. Main content section
+3. Article Page
+4. votebar
+5. comment sections
+6. user authentication (google, etc)
+
+
+(home(/), 
+trending news(/trending), 
+latestnews(/latest), 
+editorial news (/editorial), 
+nationalNews (/national),
+international news(international))
+
+
+Navigation Bar:
+
+ 1. Navigation Bar is included on all pages with hyper links of all above.
+
+
+2. Main page Design:
+
+OVerall page divides to 6 containers 
+
+container 1 : Trending News (pull from database with category trending and time latest) and top 10
+
+container 2 : latest news with images slides if possible ( pull from database main table with top 5)
+
+container 3 : editorial News (pull from database with category editorial and time latest)
+
+container 4 : nationalNews News (pull from database with category national and time latest)
+
+container 5 : international News (pull from database with category international and time latest)
+
+
+3. Article page :
+
+template (to include in all articles)
+top container : nav bar (height 10%)
+container 2 : heading of article ( pull from database , columname - name of article) - height 5%
+container 3: votebar ( pull votes from DB (polls) for both right and left and display and set marker accordingly) - 5%
+conatiner 4: divided into two equal containers with right and left article ( pull from content DB - right content, left content) 
+container 5: comments section ( pull comments from comments table) - will add likes later if required
+
+4. vote bar 
+
+Placed below Main headline with 70% width with linear gradient from green to red with marker at center and move as per votes.
+buttons on both sides of bar 10% width each - name (votethis)
+remiaing width will display no.od votes on both sides.
+
+
+5. comments 
+  any one should be able to comments, if google authentication is enabled , user name should be visible or else anonymus. if like is implemeneted, more likes should be top
+
+6. user auth
+
+integrate with google api for user authentication
+
+
+Database Models:
+
+Model 1: Content 
+
+Id (pk) - auto generated - can be used in url redirect
+Name (charfield) - article name - can be used in url redirect
+category: category of news 
+title - heading of article 
+image_right - image on top of right box content 
+highlight_right - highlights below image
+content_right - contnet on right box
+image_left - image on left box
+highlights_left - highlights of left article 
+content_left - content on left box 
+author_id:
+created_at
+updated_at:
+
+Model 2 :
+  Id (FK):
+  user_id: 
+  rightvotes:
+  leftvotes:
+  votetime: 
+
+Model 3 :
+comment_id(pk)
+article_id(FK)
+user_id(FK)
+comment_text:
+created_at: 
+
+
+Views:
+
+Home - mainpage.html
+editorial
+trending
+latest news 
+
+view article(request, pk):
+   redirect to specific page with id or name as in vedio
+
+
+Release 1: 
+   Main page with articles 
+
+Reelase 2: votebar 
+
+release 3: user_auth and comments. 
+
+release 4: anyone can submit news, will be published after verification. 
+
+Tools:
+Django framework 
+
+DB - sqlite (default) - if system supports more we can move to psql or cloud 
+
+Html, css, js
