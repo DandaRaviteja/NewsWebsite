@@ -17,7 +17,7 @@ body {
 .voting-bar {
     width: 100%;
     height: 20px;
-    background: linear-gradient(to right, green, rgb(180, 54, 54));
+    background: linear-gradient(to right, rgb(153, 205, 243), rgb(241, 189, 189));
     position: relative;
 }
 .bar {
