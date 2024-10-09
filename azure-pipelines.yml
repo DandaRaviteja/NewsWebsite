@@ -35,6 +35,8 @@ stages:
               echo '$(Pipeline.Workspace)'
       - job: Build
         displayName: Build
+        dependsOn:
+          - CheckingVariables
         steps:
         - task: Docker@2
           inputs:
