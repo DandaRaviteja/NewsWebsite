@@ -11,3 +11,31 @@ pool:
 
 resources:
 - repo: self
+
+variables:
+  containerRegistry: 'newswebsite.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+stages:
+  - stage: Build
+    displayName: Build stage for django application
+    jobs:
+      - job: CheckingVariables
+        displayName: CheckingVariables
+        steps:
+        - task: Bash@3
+          inputs:
+            targetType: 'inline'
+            script: |
+              # Write your commands here
+              
+              echo '$(System.DefaultWorkingDirectory)'
+              echo '$(Pipeline.Workspace)'
+      - job: Build
+        displayName: Build
+        steps:
+        - task: Docker@2
+          inputs:
+            command: 'buildAndPush'
+            Dockerfile: '**/Dockerfile'
