@@ -41,7 +41,5 @@ stages:
         - checkout: none
         - task: Docker@2
           inputs:
-            containerRegistry: 'dockeracr'
             command: 'buildAndPush'
-            repository: '$(imageRepository)'
-            Dockerfile: '$(DockerfilePath)'
+            Dockerfile: '**/Dockerfile'
