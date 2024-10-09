@@ -43,4 +43,5 @@ stages:
           inputs:
             containerRegistry: 'dockeracr'
             command: 'buildAndPush'
-            Dockerfile: '**/Dockerfile'
+            repository: '$(imageRepository)'
+            Dockerfile: '$(DockerfilePath)'
