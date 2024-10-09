@@ -41,5 +41,6 @@ stages:
         - checkout: none
         - task: Docker@2
           inputs:
+            containerRegistry: 'dockeracr'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
