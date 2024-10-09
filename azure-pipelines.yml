@@ -9,9 +9,6 @@ trigger:
 pool:
   name: terraform
 
-resources:
-- repo: self
-
 variables:
   containerRegistry: 'newswebsite.azurecr.io'
   imageName: 'newswebsite'
