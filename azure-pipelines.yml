@@ -41,4 +41,6 @@ stages:
         - task: Docker@2
           inputs:
             command: 'buildAndPush'
-            Dockerfile: '**/Dockerfile'
+            repository: '$(imageRepository)'
+            Dockerfile: '$(DockerfilePath)'
+            
