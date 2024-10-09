@@ -38,6 +38,7 @@ stages:
         dependsOn:
           - CheckingVariables
         steps:
+        - checkout: none
         - task: Docker@2
           inputs:
             command: 'buildAndPush'
