@@ -10,8 +10,8 @@ pool:
   name: terraform
 
 variables:
+  imageRepository: 'newswebsite'
   containerRegistry: 'newswebsite.azurecr.io'
-  imageName: 'newswebsite'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
 
@@ -39,4 +39,7 @@ stages:
         - task: Docker@2
           inputs:
             command: 'buildAndPush'
-            Dockerfile: '**/Dockerfile'
+            repository: $(imageRepository)
+            Dockerfile: $(dockerfilePath)
+            tags: |
+              $(tag)
