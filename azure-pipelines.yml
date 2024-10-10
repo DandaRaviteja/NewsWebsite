@@ -6,7 +6,7 @@ trigger:
 - feature/basecode
 
 pool:
-name: terraform
+  name: terraform
 
 resources:
 - repo: self
