@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: djangoapplication 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: djangoapplication
+  template:
+    metadata:
+      labels:
+        app: djangoapplication 
+    spec:
+      containers:
+        - name: djangoapplication 
+          image: newswebsite.azurecr.io/djangoapplication
+          ports:
+          - containerPort: 8000
