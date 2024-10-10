@@ -1,0 +1,435 @@
+<html>
+    <head>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #tred_article img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            #tred_article h5 {
+                margin-top: 15px;
+                font-size: 14px;
+                color: #888;
+                margin-bottom: 10px;
+            }
+
+            h6 {
+                color: #888;
+                font-size: 14px;
+                margin-top: 15px;
+            }
+
+            #tred_article h3 {
+                font-size: 20px;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            #tred_article p {
+                font-size: 16px;
+                color: #555;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            #tred_article a {
+                text-decoration: none;
+                font-size: 14px;
+                color: #fff;
+                background-color: #007bff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            #tred_article a:hover {
+                background-color: #0056b3;
+            }
+            .row h6{
+                margin-top: 15px;
+            }
+           .row .overlay-text {
+    position: absolute;
+    
+    top: 0px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255); /* Semi-transparent white background */
+    color: #000; /* Black text color */
+    padding: 5px 10px; /* Padding around the text */
+     /* Rounded corners */
+    font-size: 16px; /* Font size */
+    z-index: 10; 
+   
+    /* Make sure the text appears above the image */
+    display: inline; 
+    font-weight: bold;
+}
+.trend-cat{
+    color: #333;
+    border: 2px solid #888;
+    padding: 8px;
+}
+#international-news{
+    max-height: 20vh; /* Set a fixed height */
+    overflow-y: auto;  /* Enable vertical scroll if content overflows */
+    padding-right: 15px;
+}
+#pol-news{
+    max-height: 20vh; /* Set a fixed height */
+    overflow-y: auto;  /* Enable vertical scroll if content overflows */
+    padding-right: 15px;
+}
+.trending-news-items-container {
+    max-height: 90vh; /* Set a fixed height */
+    overflow-y: auto;  /* Enable vertical scroll if content overflows */
+    padding-right: 15px; /* Add padding to prevent cutting off content */
+}
+.trending-news-items-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar in Firefox */
+.trending-news-items-container {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+.trending-news-items-container {
+    -ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+#pol-news::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar in Firefox */
+#pol-news {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+#pol-news {
+    -ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+/**/
+#international-news::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar in Firefox */
+#international-news {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+#international-news {
+    -ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+#fil-news{
+    max-height: 20vh; /* Set a fixed height */
+    overflow-y: auto;  /* Enable vertical scroll if content overflows */
+    padding-right: 15px;
+}
+#fil-news::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar in Firefox */
+#fil-news {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+#fil-news {
+    -ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+.container{
+    max-width: 98vw;
+}
+.trending-news-items{
+padding-bottom:1vh ;
+border-bottom: 3px solid #888;
+}
+.headritem{
+    margin-right: 2vw;
+    
+    color: #888;
+   
+}
+.headercon{
+    margin-left: 2vw;
+}
+
+/* Media query for screens up to 767px wide (mobile devices) */
+@media (max-width: 576px) {
+    body{
+        background-color: #000;
+    }
+    
+}
+
+
+
+
+   
+
+
+        </style>
+    </head>
+    <body>
+        <div class="row header d-flex justify-content-around headercon">
+            <div class="d-flex justify-content-start">
+                <h5 class="headritem" id="dateHeading">11th Oct</h5>
+                <h5 class="headritem">Overall</h5>
+                <h5 class="headritem">Political</h5>
+                <h5 class="headritem">Film</h5>
+                <h5 class="headritem">International</h5>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row news-container d-flex justify-content-around">
+            
+                <div class="col-lg-4 ">
+                    <h3 style="font-size: 5vh;">Latest</h3>
+                
+           
+
+            
+            <div id="latestNewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+               
+               
+                <div class="carousel-inner">
+                    <!-- First Slide -->
+                    <div class="carousel-item active">
+                        <div class="overlay-text">Poltical</div>
+                        <div class="row">
+                           
+                                <img src="laddu.jpg" alt="Headline Image" class="img-fluid">
+                                
+                            </div>
+                            <div class="row">
+                           
+                                <h6>Apr 05, 2024</h6>
+                                <h3>I'm head of head of head</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod fermentum 
+                                    urna, sit amet posuere nisl consectetur ac. Donec commodo nisi vitae velit 
+                                    fermentum efficitur.
+                                </p>
+                                <a href="#">Continue Reading</a>
+                            
+                        </div>
+                    </div>
+                    <!-- Second Slide -->
+                    <div class="carousel-item">
+                        <div class="overlay-text">Political</div>
+                        <div class="row">
+                            
+                                <img src="laddu.jpg" alt="Headline Image" class="img-fluid">
+                               
+                            </div>
+                            <div class="row">
+                            
+                                <h6>Mar 15, 2024</h6>
+                                <h3>Another Headline Here</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod fermentum 
+                                    urna, sit amet posuere nisl consectetur ac. Donec commodo nisi vitae velit 
+                                    fermentum efficitur.
+                                </p>
+                                <a href="#">Continue Reading</a>
+                          
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#latestNewsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#latestNewsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+           
+        </div>
+        <div class="col-lg-4
+        
+        "><h3>Trending</h3>
+            <div class="trending-news-items-container">
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#" >Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+        <div class="trending-news-items">
+            <div class=" d-flex align-items-center">
+                <h6 class="trend-cat">Poltical</h6>
+                <h6 class="ms-5">20th april,2024</h6>
+            </div>
+            <div class="row"><h2>heading of news article</h2></div>
+            <div class="row"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quo cumque distinctio? </p></div>
+            <div class="row"><a href="#">Continue Reading</a></div>
+        </div>
+    </div>
+        </div>
+        <div class="col-lg-3"><h3>Catagiries</h3>
+            <h6 class="trend-cat">International</h6>
+            <ul id="international-news" class="list-group cat ">
+        
+      
+                <li class="list-group-item">Trending News 1</li> <!-- Pull top 10 trending news from DB -->
+                <li class="list-group-item">Trending News 2</li>
+                <li class="list-group-item">Trending News 3</li>
+                <li class="list-group-item">Trending News 4</li>
+                <li class="list-group-item">Trending News 5</li>
+                <li class="list-group-item">Trending News 3</li>
+                <li class="list-group-item">Trending News 4</li>
+                <li class="list-group-item">Trending News 5</li>
+               
+               
+            </ul>
+            <h6 class="trend-cat">Poltical news</h6>
+            <ul id="pol-news" class="list-group cat ">
+        
+      
+                <li class="list-group-item">Trending News 1</li> <!-- Pull top 10 trending news from DB -->
+                <li class="list-group-item">Trending News 2</li>
+                <li class="list-group-item">Trending News 3</li>
+                <li class="list-group-item">Trending News 4</li>
+                <li class="list-group-item">Trending News 5</li>
+                <li class="list-group-item">Trending News 3</li>
+                <li class="list-group-item">Trending News 4</li>
+                <li class="list-group-item">Trending News 5</li>
+               
+               
+            </ul>
+            <h6 class="trend-cat">Film</h6>
+            <ul id="fil-news" class="list-group cat ">
+        
+      
+                <li class="list-group-item">Trending News 1</li> <!-- Pull top 10 trending news from DB -->
+                <li class="list-group-item">Trending News 2</li>
+                <li class="list-group-item">Trending News 3</li>
+                <li class="list-group-item">Trending News 4</li>
+                <li class="list-group-item">Trending News 5</li>
+                <li class="list-group-item">Trending News 3</li>
+                <li class="list-group-item">Trending News 4</li>
+                <li class="list-group-item">Trending News 5</li>
+               
+               
+            </ul>
+            </div>
+    </div>
+
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const today = new Date();
+
+// Format the date to '11th Oct' format
+const options = { day: 'numeric', month: 'long'  };
+const formattedDate = today.toLocaleDateString('en-US', options);
+
+// Add the date suffix (st, nd, rd, th)
+function getDayWithSuffix(date) {
+    const day = date.getDate();
+    if (day > 3 && day < 21) return day + 'th'; // Exceptions for 11th to 13th
+    switch (day % 10) {
+        case 1: return day + 'st';
+        case 2: return day + 'nd';
+        case 3: return day + 'rd';
+        default: return day + 'th';
+    }
+}
+
+// Apply the suffix to the day
+const dayWithSuffix = getDayWithSuffix(today);
+
+// Set the formatted date inside the <h5> element
+document.getElementById('dateHeading').textContent = dayWithSuffix + ', ' + formattedDate.split(' ')[0];
+        </script>
+    </body>
+</html>
