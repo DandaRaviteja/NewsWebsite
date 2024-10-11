@@ -72,13 +72,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'news.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+# mysql flexible Database on Azure
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysqldatabase-newswebsite-dev-northeurope',
+        'USER': 'sqluser',
+        'PASSWORD': 'Haritha@1234',
+        'HOST': 'mysqlserver-newswebsite-dev-northeurope.mysql.database.azure.com',
+        'PORT': '3306',
     }
 }
 
