@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'Krishna';
+    src: url('Sree Krushnadevaraya.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lohit';
+    src: url('Lohit-Telugu.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.trendDes{
+    font-family: 'lohit';
+    font-size: 20px;
+    color:#333;
+}
+.titleLatest{
+    font-family: 'krishna';
+}
 *{
     margin: 0%;
     padding: 0%;

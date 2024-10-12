@@ -1,5 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
+@font-face {
+    font-family: 'Krishna';
+    src: url('Sree Krushnadevaraya.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lohit';
+    src: url('Lohit-Telugu.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.trendDes{
+    font-family: 'lohit';
+    font-size: 20px;
+    color:#333;
 }
 .container {
     width: 80%;
@@ -154,4 +168,7 @@ margin-left: 2vw;
     /* For IE and Edge */
     .header {
     -ms-overflow-style: none; /* Internet Explorer and older Edge */
+    }
+    .articleT{
+        font-family: 'krishna';
     }

@@ -38,8 +38,8 @@
                         
                         <!-- Text Section (stacked under image on mobile) -->
                         <div class="col-12 col-md-8 d-flex flex-column justify-content-center p-3">
-                            <h5 class="card-title">{{ article.title }}</h5>
-                            <p class="card-text">{{ article.description|truncatewords:30 }}</p>
+                            <h2 class="card-title card-title">{{ article.title }}</h2>
+                            <p class="card-text trendDes">{{ article.description|truncatewords:30 }}</p>
                             <a href="{% url 'article' article.slug %}" >Continue Reading</a>
                         </div>
                     </div>

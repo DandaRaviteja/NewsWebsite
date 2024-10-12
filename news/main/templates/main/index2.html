@@ -54,8 +54,8 @@ Sarva samachar
                             <div class="row">
                            
                                 <h6>{{ article.created_at }}</h6>
-                                <h3>{{ article.title }}</h3>
-                                <p>
+                                <h3 class="titleLatest">{{ article.title }}</h3>
+                                <p class='trendDes'>
                                     {{article.description}}
                                 </p>
                                 <a href="{% url 'article' article.slug %}">Continue Reading</a>
@@ -88,8 +88,9 @@ Sarva samachar
                 <h6 class="trend-cat">{{trending_article.category}}</h6>
                 <h6 class="ms-5">{{trending_article.created_at}}</h6>
             </div>
-            <div class="row"><h2>{{trending_article.title}}</h2></div>
-            <div class="row"><p>{{trending_article.description}} </p></div>
+
+            <div class="row titleLatest"><h2>{{trending_article.title}}</h2></div>
+            <div class="row"><p class="trendDes">{{trending_article.description}} </p></div>
             <div class="row"><a href="{% url 'article' trending_article.slug %}" >Continue Reading</a></div>
         </div>
         {% endfor %}

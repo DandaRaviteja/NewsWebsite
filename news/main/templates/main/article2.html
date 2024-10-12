@@ -28,7 +28,7 @@
     </div>
     
     <div class="container">
-        <div class="heading d-flex justify-content-between"><span>{{article.title}}</span> <i class="bi bi-share" id="shareBtn"></i></div>
+        <div class="heading d-flex justify-content-between articleT"><span class="articleT">{{article.title}}</span> <i class="bi bi-share" id="shareBtn"></i></div>
 
         <div class="voting-bar-container">
             <div class="d-flex justify-content-center"> <span>Total Votes:</span><span id="total_votes">  0</span></div>
@@ -64,9 +64,10 @@
 
         <button type="button" class="btn btn-outline-dark" onclick="vote('{{view.view_id}}','{{article.article_id}}' )">నేను దీన్ని మద్దతు ఇస్తున్నాను</button>
             
-            <h3 >{{view.view_heading}}</h3>
+            <h3 class="articleT" >{{view.view_heading}}</h3>
             <img src="{{ article.headline_image.url }}" alt="News Image" width="200">
-            <p>
+
+            <p class="trendDes">
                 {{view.content|safe}}
                  
             </p>
