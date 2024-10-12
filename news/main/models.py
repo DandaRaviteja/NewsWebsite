@@ -12,7 +12,7 @@ from django.utils.text import slugify
 class Articles(models.Model):
     article_id = models.AutoField(primary_key=True)  # Auto-incrementing primary key
     slug = models.CharField(max_length=255, unique=True, blank=True)  # Unique string identifier
-    
+    description=models.CharField(max_length=600,  blank=True)
     category = models.ForeignKey('main.Categories', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     headline_image = models.ImageField(upload_to='media/images/headline_images/', blank=True, null=True)
