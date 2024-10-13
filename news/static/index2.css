@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'Krishna';
+    src: url('Sree Krushnadevaraya.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lohit';
+    src: url('Lohit-Telugu.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.trendDes{
+    font-family: 'lohit';
+    font-size: 20px;
+    color:#333;
+}
+.titleLatest{
+    font-family: 'krishna';
+}
+*{
+    margin: 0%;
+    padding: 0%;
+   
+}
+#tred_article img {
+    width: 100%;
+    
+    border-radius: 10px;
+}
+
+#tred_article h5 {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+h6 {
+    color: #888;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+#tred_article h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#tred_article p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#tred_article a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#tred_article a:hover {
+    background-color: #0056b3;
+}
+.row h6{
+    margin-top: 15px;
+}
+.row .overlay-text {
+position: absolute;
+
+top: 0px; /* Adjust as needed */
+left: 0px; /* Adjust as needed */
+background-color: rgba(255, 255, 255); /* Semi-transparent white background */
+color: #000; /* Black text color */
+padding: 5px 10px; /* Padding around the text */
+/* Rounded corners */
+font-size: 16px; /* Font size */
+z-index: 10; 
+
+/* Make sure the text appears above the image */
+display: inline; 
+font-weight: bold;
+}
+.trend-cat{
+color: #333;
+border: 2px solid #888;
+padding: 8px;
+}
+#international-news{
+max-height: 20vh; /* Set a fixed height */
+overflow-y: auto;  /* Enable vertical scroll if content overflows */
+padding-right: 15px;
+}
+#pol-news{
+max-height: 20vh; /* Set a fixed height */
+overflow-y: auto;  /* Enable vertical scroll if content overflows */
+padding-right: 15px;
+}
+.trending-news-items-container {
+max-height: 90vh; /* Set a fixed height */
+overflow-y: auto;  /* Enable vertical scroll if content overflows */
+padding-right: 15px; /* Add padding to prevent cutting off content */
+}
+.trending-news-items-container::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar in Firefox */
+.trending-news-items-container {
+scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+.trending-news-items-container {
+-ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+#pol-news::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar in Firefox */
+#pol-news {
+scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+#pol-news {
+-ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+/**/
+.header,#international-news::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar in Firefox */
+.header,#international-news {
+scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+.header,#international-news {
+-ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+#fil-news{
+max-height: 20vh; /* Set a fixed height */
+overflow-y: auto;  /* Enable vertical scroll if content overflows */
+padding-right: 15px;
+}
+#fil-news::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar in Firefox */
+#fil-news {
+scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+#fil-news {
+-ms-overflow-style: none; /* Internet Explorer and older Edge */
+}
+.container{
+max-width: 98vw;
+margin-top: 2vh;
+}
+.trending-news-items{
+padding-bottom:1vh ;
+border-bottom: 3px solid #888;
+}
+.headritem{
+margin-top:2vh;
+margin-right: 2vw;
+
+color: #888;
+
+}
+.headercon{
+margin-left: 2vw;
+}
+
+/* Media query for screens up to 767px wide (mobile devices) */
+@media (max-width: 576px) {
+.headritem{
+margin-right: 5vw;
+font-size: 15px;
+color: #888;
+
+}
+.news-container{
+margin-top: 3vh;
+}
+.trending-cont{
+margin-top: 5vh;
+margin-bottom: 5vh;
+}
+.cat{
+margin-bottom: 5vh;
+display: none;
+}  
+}
+
+.headritem a{
+text-decoration: none;
+color: #888;
+}
+
+.navbar-brand{
+font-weight: 900;
+font-size: 20px;
+
+}
+.navbar{
+margin-bottom: 2vh;
+}
+
+.activeTab a{
+padding: 5px 10px;
+
+background-color: #888;
+border-radius:20px ;
+color: #fff;
+}

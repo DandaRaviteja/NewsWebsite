@@ -1,173 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Article</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-}
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-.heading {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.voting-bar-container {
-    margin-bottom: 20px;
-    
-}
-.voting-bar {
-    width: 100%;
-    height: 20px;
-    background-color:#c97171;
-    border-style: solid;
-  border-width: 2px;
-    position: relative;
-    border-radius: 20px;
-    border-color: rgb(50, 43, 43);
-   
-}
-.bar {
-    height: 100%;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.votes {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-.tabs {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-}
-.tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    margin-right: 5px;
-}
-.tab.active {
-    background-color: #f1f1f1;
-    font-weight: bold;
-}
-.tab-content {
-    border: 1px solid #ccc;
-    padding: 20px;
-    display: none;
-}
-.tab-content.active {
-    display: block;
-}
-
-
-
-        #inner-bar1 {
-            position: absolute;
-            background:rgb(198, 186, 58); /* Gradient for inner bar */
-            width: 0%; /* Initial width, adjust as needed */
-            height: 100%;
-            border-radius: 20px; /* Rounded corners on the left */
-            transition: width 0.5s ease; /* Smooth transition for width */
-        }
-   
-/* The sidepanel menu */
-.sidepanel {
-  height: 100%; /* Specify a height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: absolute; /* Stay in place */
-  z-index: 20; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-}
-
-/* The sidepanel links */
-.sidepanel a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #dfdfdf;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidepanel a:hover {
- /* color: #f1f1f1;*/
-}
-
-/* Position and style the close button (top right corner) */
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style the button that is used to open the sidepanel */
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: transparent;
-  color: rgb(0, 0, 0);
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  /*background-color: #444;*/
-}
-h3{
-    margin-top: 20px;
-}
-
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'article2.css' %}">
 </head>
 <body>
-    <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/">Home</a>
-        
-      </div>
-      
-      
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <button class="openbtn" onclick="openNav()">&#9776; </button>
-      <!--    <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="logo here"> -->
-          <b>సమతాప</b>
+          <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+         Sarva samachar
         </a>
       </nav>
+    <div class="row header d-flex justify-content-around headercon" style="overflow-x: auto; white-space: nowrap;">
+        <div class="d-flex justify-content-start">
+            <h5 class="headritem" id="dateHeading">11th Oct</h5>
+            <h5 class="headritem" id="overallTab"><a href="{% url 'home'  %}">Overall</a></h5>
+            <h5 class="headritem" id="Political"><a href="{% url 'category'  'Political' %}">Political</a></h5>
+            <h5 class="headritem" id="Film"><a href="{% url 'category'  'Film' %}">Film</a></h5>
+            <h5 class="headritem" id="International"><a href="{% url 'category'  'International' %}">International</a></h5>
+        </div>
+    </div>
+    
     <div class="container">
-        <div class="heading">{{article.title}}</div>
-        
+        <div class="heading d-flex justify-content-between articleT"><span class="articleT">{{article.title}}</span> <i class="bi bi-share" id="shareBtn"></i></div>
+
         <div class="voting-bar-container">
+            <div class="d-flex justify-content-center"> <span>Total Votes:</span><span id="total_votes">  0</span></div>
             <div class="voting-bar">
-                <div id="inner-bar1" ></div>
-                
+                <div id="inner-bar1"></div>
             </div>
             <div class="votes">
                 {% for view in views %}
-               <div> <span>{{view.view_name}}</span><span id="{{ view.view_id  }}"> Votes: 0</span></div>
-                {% endfor %}
+                <div> <span>{{view.view_name}}</span><span id="{{ view.view_id  }}"> Votes: 0</span></div>
+                 {% endfor %}
+                
             </div>
+           
         </div>
+
         <div class="tabs">
             {% for view in views %}
             {% if forloop.counter == 1 %}
@@ -176,8 +52,8 @@ h3{
             <div class="tab " data-tab="{{view.view_id}}">{{view.view_name}}</div>
             {% endif %}
             {% endfor %}
-           
         </div>
+
         {% for view in views %}
 
         {% if forloop.counter == 1 %}
@@ -188,14 +64,17 @@ h3{
 
         <button type="button" class="btn btn-outline-dark" onclick="vote('{{view.view_id}}','{{article.article_id}}' )">నేను దీన్ని మద్దతు ఇస్తున్నాను</button>
             
-            <h3 >{{view.view_heading}}</h3>
+            <h3 class="articleT" >{{view.view_heading}}</h3>
             <img src="{{ article.headline_image.url }}" alt="News Image" width="200">
-            <p>
+
+            <p class="trendDes">
                 {{view.content|safe}}
-                <a href="www.example.com">more</a>    
+                 
             </p>
            </div>
            {% endfor %}
+
+        
     </div>
 
     <script>
@@ -262,6 +141,8 @@ function updateVotes() {
         
         
     {% endfor %}
+    
+   
     console.log(votes);
     
     //console.log(one);
@@ -286,10 +167,13 @@ function fetchResults(pollId) {
                        one=data[key]
                 }
                 i++;
-                    document.getElementById(`${key}`).textContent = ` Votes: ${data[key]}`;
+                    document.getElementById(`${key}`).textContent = ` : ${((data[key]/ data['total_votes'])*100).toFixed(2)}%`;
                 }
-            });
-            // Update the bar width based on results
+            }
+            
+        );
+            // Update the bar width based on 
+            document.getElementById("total_votes").textContent = `${data["total_votes"]}`;
             const leftPercentage = (one / data['total_votes']) * 100; // Example for one option
             document.getElementById('inner-bar1').style.width = `${leftPercentage}%`;
         }
@@ -306,8 +190,61 @@ function fetchResults(pollId) {
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
-    
+document.querySelector('#shareBtn')
+        .addEventListener('click', event => {
+
+            // Fallback, Tries to use API only
+            // if navigator.share function is
+            // available
+            if (navigator.share) {
+                navigator.share({
+
+                    // Title that occurs over
+                    // web share dialog
+                    title:  '{{article.title}}',
+
+                    // URL to share
+                    url:'http://127.0.0.1:8000/article/'+'{{article.slug}}'
+                }).then(() => {
+                    
+                }).catch(err => {
+
+                    // Handle errors, if occurred
+                    console.log(
+                    "Error while using Web share API:");
+                    console.log(err);
+                });
+            } else {
+
+                // Alerts user if API not available 
+                alert("Browser doesn't support this API !");
+            }
+        })
+        const today = new Date();
+
+// Format the date to '11th Oct' format
+const options = { day: 'numeric', month: 'long'  };
+const formattedDate = today.toLocaleDateString('en-US', options);
+
+// Add the date suffix (st, nd, rd, th)
+function getDayWithSuffix(date) {
+    const day = date.getDate();
+    if (day > 3 && day < 21) return day + 'th'; // Exceptions for 11th to 13th
+    switch (day % 10) {
+        case 1: return day + 'st';
+        case 2: return day + 'nd';
+        case 3: return day + 'rd';
+        default: return day + 'th';
+    }
+}
+
+// Apply the suffix to the day
+const dayWithSuffix = getDayWithSuffix(today);
+
+console.log("running")
+document.getElementById('dateHeading').textContent = dayWithSuffix + ', ' + formattedDate.split(' ')[0];
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

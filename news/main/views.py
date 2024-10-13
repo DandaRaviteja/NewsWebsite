@@ -31,7 +31,7 @@ def article(request,slug):
         ArticleView.objects.create(article=article, viewed_at=timezone.now())
         #request.session[session_key] = True
     
-        return render(request, 'main/article.html',{'article': article,'views':views})
+        return render(request, 'main/article2.html',{'article': article,'views':views})
     else:
        
         return HttpResponse("Article not found", status=404)
@@ -40,7 +40,53 @@ def article(request,slug):
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
+@csrf_exempt
+def vote2(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        option_id = data.get('option_id')
+        article_id=data.get('article_id')
+        print(option_id)
+        try:
+            # Fetch the new option the user wants to vote for
+            new_option = View.objects.get(view_id=option_id)
+            
+            # Check if the user has already voted by looking for the 'voted_option' cookie
+            old_option_id = request.COOKIES.get('voted_option'+article_id)
+            print(old_option_id)
+            if old_option_id:
+                if old_option_id == option_id:
+                    # User is voting for the same option again, no action needed
+                    return JsonResponse({'success': False, 'message': 'You have already voted for this option.'})
+                if old_option_id != option_id:
+                    # Fetch the old option
+                    try:
+                        old_option = View.objects.get(view_id=old_option_id)
+                        print("old votes")
+                        print(old_option.polled_votes)
+                        old_option.polled_votes -= 1
+                        old_option.save()
+                    except View.DoesNotExist:
+                        # Handle if the old option doesn't exist (shouldn't happen in most cases)
+                        return JsonResponse({'success': False, 'message': 'Invalid previous option.'})
+                
 
+
+            # Increase the vote count for the new option
+            new_option.polled_votes += 1
+            new_option.save()
+
+            response = JsonResponse({'success': True, 'message': 'Vote recorded.'})
+            
+            # Set a cookie to track which option the user has voted for
+            response.set_cookie('voted_option'+article_id, option_id, max_age=365*24*60*60)  # Store for 1 year
+
+            return response
+
+        except View.DoesNotExist:
+            return JsonResponse({'success': False, 'message': 'Invalid option.'})
+
+    return JsonResponse({'success': False, 'message': 'Invalid request.'})
 @csrf_exempt
 def vote(request):
     if request.method == "POST":
@@ -105,4 +151,9 @@ def home(request):
         'International':International
     }
     
-    return render(request, 'main/index.html', context)
+    return render(request, 'main/index2.html', context)
+def category_articles(request, category_slug):
+    articles = Articles.objects.filter(category=category_slug)
+    print(len(articles))
+    return render(request, 'main/cats.html', {'articles': articles,'catg':category_slug})
+
