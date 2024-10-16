@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'news.wsgi.application'
 
 
 # mysql flexible Database on Azure
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -84,6 +84,15 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 
 
 # Password validation
